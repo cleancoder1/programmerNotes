@@ -2,3 +2,9 @@
 article {
     padding: 10px 250px;
 }
+
+a.deco-none {
+    color:#000000 !important;
+    text-decoration:none;
+
+}
