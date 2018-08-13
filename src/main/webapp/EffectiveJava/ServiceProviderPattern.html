@@ -23,8 +23,15 @@
     });
 </script>
 <article>
-    Static constructor
-    Service Provider Pattern involving JDBC , Device Driver and Connection, DriverManager classes
+   <h1>Consider static factory methods instead of constructors</h1>
+   Class of returned object need not exist when the class contatining the method is written.
+    <br>
+
+    Service interface aka implementation   => Connection (jdbc analogy) <br>
+    Provider registration api , which providers use to register implementations   => driverManager. registerDriver <br>
+    Service Access Api , which clients use to obtain instances of the service    => DriverManager.getConnection <br>
+    Serive provider interface  (optional)   => Driver  A factory object that produces instances of Service interface
+
 </article>
 
 
