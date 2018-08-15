@@ -25,4 +25,28 @@ class SelectionSortSpec extends Specification {
         a[4] == 5
     }
 
+
+    def "Insertion sorts "() {
+
+        given: ""
+        InsertionSort insertionSort = new InsertionSort()
+        Integer[] a = new Integer[5]
+        a[0] = 5
+        a[1] = 2
+        a[2] = 3
+        a[3] = 4
+        a[4] = 1
+
+        when: ""
+
+        insertionSort.sort(a)
+
+        then: ""
+        a[0] == 1
+        a[1] == 2
+        a[2] == 3
+        a[3] == 4
+        a[4] == 5
+    }
+
 }
