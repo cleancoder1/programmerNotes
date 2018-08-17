@@ -1,4 +1,4 @@
-public class SelectionSort {
+public class SelectionSort extends Sort {
 
 
     public void sort(Comparable a[]) {
@@ -14,14 +14,5 @@ public class SelectionSort {
 
     }
 
-    private void exchange(Comparable input[], int a, int b) {
-        Comparable temp = input[a];
-        input[a] = input[b];
-        input[b] = temp;
 
-    }
-
-    private boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
 }
