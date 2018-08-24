@@ -22,7 +22,7 @@ class MergeSortSpec extends Specification {
         a[2] == 5
         a[3] == 8
         a[4] == 9
-
+        true == mergeSort.isSorted(a)
 
     }
 
@@ -58,7 +58,7 @@ class MergeSortSpec extends Specification {
 
         mergeSort.sort(a)
         then: ""
-        for (int i = 0; i < a.length; i++)
-            println(a[i])
+        mergeSort.show(a)
+        true == mergeSort.isSorted(a)
     }
 }
