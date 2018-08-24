@@ -1,7 +1,10 @@
 /*Divide and Conquer approach*/
 public class MergeSort extends Sort {
+    private Comparable[] aux;
+
     @Override
     public void sort(Comparable[] a) {
+        aux = new Comparable[a.length];
         sort(a, 0, a.length - 1);
     }
 
@@ -18,24 +21,16 @@ public class MergeSort extends Sort {
 
     /*   sorted left array [lo,mid]  sorted right array [mid+1,hi] */
     private void merge(Comparable[] a, int lo, int mid, int hi) {
-        Comparable aux[] = new Comparable[a.length];
-        for (int i1 = lo; i1 <= hi; i1++) {
-            aux[i1] = a[i1];
+        for (int k = lo; k <= hi; k++) {
+            aux[k] = a[k];
         }
-        int i = lo;
-        int j = mid + 1;
+        int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             if (i > mid) {
                 a[k] = aux[j++];
-                continue;
-            }
-
-            if (j > hi) {
+            } else if (j > hi) {
                 a[k] = aux[i++];
-                continue;
-            }
-
-            if (less(aux[i], aux[j])) {
+            } else if (less(aux[i], aux[j])) {
                 a[k] = aux[i++];
             } else {
                 a[k] = aux[j++];

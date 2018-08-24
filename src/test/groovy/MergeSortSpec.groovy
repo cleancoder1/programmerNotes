@@ -3,10 +3,9 @@ import spock.lang.Specification
 class MergeSortSpec extends Specification {
 
 
-    MergeSort mergeSort = new MergeSort()
-
     def "merges left array to right array properly"() {
         given: ""
+        MergeSort mergeSort = new MergeSort(aux: new Comparable[5])
         Comparable[] a = new Integer[5]
         a[0] = 1
         a[1] = 2
@@ -29,6 +28,7 @@ class MergeSortSpec extends Specification {
 
     def "fix merges left array to right array properly"() {
         given: ""
+        MergeSort mergeSort = new MergeSort(aux: new Comparable[5])
         Comparable[] a = new Integer[3]
         a[0] = 2
         a[1] = 118
@@ -45,6 +45,8 @@ class MergeSortSpec extends Specification {
 
     def " check if sorting worked"() {
         given: ""
+        MergeSort mergeSort = new MergeSort()
+
         Comparable[] a = new Integer[6]
         a[0] = 2
         a[1] = 118
