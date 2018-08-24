@@ -4,44 +4,27 @@ import java.util.ArrayList;
 public class MergeSort extends Sort {
     @Override
     public void sort(Comparable[] a) {
-
-        int lo = 0;
-        int hi = a.length - 1;
-
-        sort(a, lo, hi);
-
+        sort(a, 0, a.length - 1);
     }
 
     private void sort(Comparable[] a, int lo, int hi) {
         if (lo >= hi) {
             return;
         }
-        int mid = (lo + hi) / 2;
-        System.out.println("sort(a," + lo + "," + mid + ")");
+        int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid);
-        int x = mid + 1;
-        System.out.println("sort(a," + x + "," + hi + ")");
         sort(a, mid + 1, hi);
-        System.out.println("merge(a," + lo + "," + mid + "," + hi + ")");
-
         merge(a, lo, mid, hi);
 
     }
 
-    /* assume in this array left half is already sorted , right half is already sorted , we are making the array sorted
-
+    /*
+   left array [lo,mid]  right array [mid+1,hi]
      */
     private void merge(Comparable[] a, int lo, int mid, int hi) {
         Comparable aux[] = new Comparable[a.length];
         for (int i1 = lo; i1 <= hi; i1++) {
             aux[i1] = a[i1];
-            if (i1 != hi) {
-                System.out.print(aux[i1] + ",");
-            } else {
-                System.out.print(aux[i1]);
-                System.out.println();
-            }
-
         }
         int i = lo;
         int j = mid + 1;
@@ -66,16 +49,6 @@ public class MergeSort extends Sort {
                 j++;
             }
 
-
-        }
-        System.out.println("after merge");
-        for (int i1 = lo; i1 <= hi; i1++) {
-            if (i1 != hi) {
-                System.out.print(a[i1] + ",");
-            } else {
-                System.out.print(a[i1]);
-                System.out.println();
-            }
 
         }
 

@@ -2,8 +2,7 @@ import spock.lang.Specification
 
 class MergeSortSpec extends Specification {
 
-    // confusion around open closed intervals in algorithm
-    //lets assume mid says it to be included in left array
+
     MergeSort mergeSort = new MergeSort()
 
     def "merges left array to right array properly"() {
@@ -25,9 +24,6 @@ class MergeSortSpec extends Specification {
         a[3] == 8
         a[4] == 9
 
-        //a[0] compare a[3]   comp (2,1)
-        // comp(8,
-
 
     }
 
@@ -45,11 +41,6 @@ class MergeSortSpec extends Specification {
         a[0] == 2
         a[1] == 21
         a[2] == 118
-
-        //a[0] compare a[3]   comp (2,1)
-        // comp(8,
-
-
     }
 
     def " check if sorting worked"() {
