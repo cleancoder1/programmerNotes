@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /*Divide and Conquer approach*/
 public class MergeSort extends Sort {
     @Override
@@ -11,16 +9,14 @@ public class MergeSort extends Sort {
         if (lo >= hi) {
             return;
         }
-        int mid = lo + (hi - lo) / 2;
+        int mid = lo + (hi - lo) / 2; //prevents weird overflow bug
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
         merge(a, lo, mid, hi);
 
     }
 
-    /*
-   left array [lo,mid]  right array [mid+1,hi]
-     */
+    /*   sorted left array [lo,mid]  sorted right array [mid+1,hi] */
     private void merge(Comparable[] a, int lo, int mid, int hi) {
         Comparable aux[] = new Comparable[a.length];
         for (int i1 = lo; i1 <= hi; i1++) {
@@ -30,25 +26,20 @@ public class MergeSort extends Sort {
         int j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             if (i > mid) {
-                a[k] = aux[j];
-                j++;
+                a[k] = aux[j++];
                 continue;
             }
 
             if (j > hi) {
-                a[k] = aux[i];
-                i++;
+                a[k] = aux[i++];
                 continue;
             }
 
             if (less(aux[i], aux[j])) {
-                a[k] = aux[i];
-                i++;
+                a[k] = aux[i++];
             } else {
-                a[k] = aux[j];
-                j++;
+                a[k] = aux[j++];
             }
-
 
         }
 
