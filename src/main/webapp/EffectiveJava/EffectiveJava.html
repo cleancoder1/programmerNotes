@@ -13,6 +13,19 @@
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+    <script type="text/javascript">
+        <!--
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+
+        //-->
+    </script>
+
 </head>
 <body>
 
@@ -27,6 +40,14 @@
     <ul>
         <li><a class="deco-none" href="serviceProviderPattern.html">Service Provider Pattern</a></li>
         <li><a href="MinimizeMutability.html">Minimize Mutability</a></li>
+        <li><a href=""> Don't Use raw types </a></li>
+        <li><a href="">Eliminate Unchecked Warnings, idea of supressWarnings </a></li>
+        <li><a href="#" onclick="toggle_visibility('Item28')">Prefer Lists to array,</a></li>
+        <div id="Item28" style="display:none">
+            covariant (sub is a subtype of super, then sub[] is subtype of super[]) ,invariant, reified (run time ), unreified, type erasure <br/>
+            Generic Array creation is not possible.
+        </div>
+
     </ul>
 
     <br/>
