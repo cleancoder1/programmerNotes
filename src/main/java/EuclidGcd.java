@@ -1,5 +1,4 @@
-
-/* Euclid alogirthm to find GCD of two numbers */
+/* Euclid Algorithm to find GCD of two numbers */
 public class EuclidGcd {
 
     int gcd(int p, int q) {
