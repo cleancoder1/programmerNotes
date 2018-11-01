@@ -20,4 +20,24 @@ class MyStackSpec extends Specification {
         println integerStack.size()
 
     }
+
+    def "adding iterator over a stack, does it pop elements "() {
+
+        given:
+        MyStack<Integer> integerStack = new MyStack<>()
+
+
+        when:
+        integerStack.push(Integer.valueOf(925))
+        integerStack.push(Integer.valueOf(425))
+        integerStack.push(Integer.valueOf(323))
+        Iterator iterator = integerStack.iterator()
+
+
+        then:
+        while (iterator.hasNext()) {
+            println iterator.next()
+        }
+
+    }
 }
