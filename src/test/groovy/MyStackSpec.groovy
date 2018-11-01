@@ -39,5 +39,12 @@ class MyStackSpec extends Specification {
             println iterator.next()
         }
 
+        println "calling for second time"
+        Iterator iterator2 = integerStack.iterator()
+
+        while (iterator2.hasNext()) {
+
+            println iterator2.next()
+        }
     }
 }

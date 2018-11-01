@@ -5,18 +5,18 @@ import java.util.function.Consumer;
 public class MyStack<E> implements Iterable<E> {
 
     private E[] elements = (E[]) new Object[1];
-    int n;
+    private int n;
 
     public void push(E element) {
         if (n == elements.length) {
-            resize();
+            resize(elements.length * 2);
         }
         elements[n++] = element;
 
     }
 
-    private void resize() {
-        E[] resizedArray = (E[]) new Object[elements.length * 2];
+    private void resize(int capacity) {
+        E[] resizedArray = (E[]) new Object[capacity];
         for (int i = 0; i < n; i++) {
             resizedArray[i] = elements[i];
         }
@@ -24,23 +24,14 @@ public class MyStack<E> implements Iterable<E> {
     }
 
     public E pop() {
-        if (n == elements.length / 4) {
-            shrink();
-        }
 
         E element = elements[--n]; //pre decrement n
         elements[n] = null; // this is still confusing to me visualize , avoids loitering
-        return element;
-    }
 
-    private void shrink() {
-        E[] resizedArray = (E[]) new Object[elements.length / 2];
-        for (int i = 0; i < n; i++) {
-            resizedArray[i] = elements[i];
+        if (n > 0 && n == elements.length / 4) {
+            resize(elements.length / 2);
         }
-        elements = resizedArray;
-
-
+        return element;
     }
 
     public int size() {
@@ -50,18 +41,25 @@ public class MyStack<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new StackIterator();
+        return new ReverseArrayIterator();
     }
 
-    private class StackIterator implements Iterator<E> {
+    private class ReverseArrayIterator implements Iterator<E> {
+
+        private int current;
+
+        public ReverseArrayIterator() {
+            current = n;
+        }
+
         @Override
         public boolean hasNext() {
-            return n > 0;
+            return current > 0;
         }
 
         @Override
         public E next() {
-            return pop();
+            return elements[--current];
         }
 
         @Override
