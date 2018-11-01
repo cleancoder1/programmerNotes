@@ -40,14 +40,28 @@
     <ul>
         <li><a class="deco-none" href="serviceProviderPattern.html">Service Provider Pattern</a></li>
         <li><a href="MinimizeMutability.html">Minimize Mutability</a></li>
-        <li><a href=""> Don't Use raw types </a></li>
+        <li><a href="#"> Don't Use raw types </a></li>
+        <div id="Item26" style="display:none">
+            ToDO show the table
+        </div>
         <li><a href="">Eliminate Unchecked Warnings, idea of supressWarnings </a></li>
-        <li><a href="#" onclick="toggle_visibility('Item28')">Prefer Lists to array,</a></li>
+        <li><a href="#" onclick="toggle_visibility('Item28')">Prefer Lists to array</a></li>
         <div id="Item28" style="display:none">
             covariant (sub is a subtype of super, then sub[] is subtype of super[]) ,invariant, reified (run time ), unreified, type erasure <br/>
-            Generic Array creation is not possible.
+            Generic Array creation is not possible.<br>
+            Arrays are covariant and reified; generics are invariant and erased. As a consequence, arrays provide runtime type safety but not compile-time type safety, and vice versa for generics.
         </div>
 
+        <li><a href="#" onclick="toggle_visibility('Item29')">Favor Generic Types</a></li>
+        <div id="Item29">
+            Generic Singleton Factory , you can use a single object for all required type parameterizations, but you need to write a static factory method to repeatedly dole out the object for each
+            requested type parameterization.
+        </div>
+
+        <li><a href="#" onclick="toggle_visibility('Item30')">Favor Generic Methods</a></li>
+        <div id="Item30" style="display:none">
+
+        </div>
     </ul>
 
     <br/>
