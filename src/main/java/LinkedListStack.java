@@ -1,4 +1,7 @@
-public class LinkedListStack<E> {
+import java.util.Iterator;
+import java.util.function.Consumer;
+
+public class LinkedListStack<E> implements Iterable<E> {
 
     Node head;
     int n;
@@ -36,5 +39,41 @@ public class LinkedListStack<E> {
     private class Node {
         Node next;
         E e;
+    }
+
+
+    @Override
+    public Iterator<E> iterator() {
+        return new LinkedListStackIterator<>();
+    }
+
+    private class LinkedListStackIterator<E> implements Iterator<E> {
+        Node headCopy;
+
+        public LinkedListStackIterator() {
+            headCopy = head;
+        }
+
+        @Override
+        public void remove() {
+
+        }
+
+        @Override
+        public void forEachRemaining(Consumer<? super E> action) {
+
+        }
+
+        @Override
+        public boolean hasNext() {
+            return headCopy != null;
+        }
+
+        @Override
+        public E next() {
+            E element = (E) headCopy.e;
+            headCopy = headCopy.next;
+            return element;
+        }
     }
 }
