@@ -1,6 +1,10 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+
 public class UnionFind {
     private int[] id;
     int size;
@@ -52,6 +56,7 @@ public class UnionFind {
 
 
     public static void main(String[] args) {
+        LocalDateTime start = LocalDateTime.now();
 
         int N = StdIn.readInt();
         UnionFind uf = new UnionFind(N);
@@ -65,7 +70,11 @@ public class UnionFind {
             StdOut.println(p + " " + q);
 
         }
+
+        LocalDateTime end = LocalDateTime.now();
+
         StdOut.println(uf.count() + " components");
+        StdOut.println("time spent is " + ChronoUnit.MILLIS.between(start, end) / 1000.0 + " seconds");
     }
 
 
