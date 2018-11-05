@@ -11,25 +11,25 @@ public class FlipsMax {
         Counter heads = new Counter("heads");
         Counter tails = new Counter("tails");
 
-        for ( int i=0 ; i< t;i++){
-            if(StdRandom.bernoulli(0.5)){
+        for (int i = 0; i < t; i++) {
+            if (StdRandom.bernoulli(0.5)) {
                 heads.increment();
-            }else{
+            } else {
                 tails.increment();
             }
         }
-        if(heads.tally() == tails.tally()){
+        if (heads.tally() == tails.tally()) {
             StdOut.println("Tie");
-        }else{
-            StdOut.println(max(heads,tails)+"wins");
+        } else {
+            StdOut.println(max(heads, tails) + "wins");
         }
 
 
     }
 
-    public static Counter max(Counter x, Counter y){
+    public static Counter max(Counter x, Counter y) {
 
-        if(x.tally() > y.tally()){
+        if (x.tally() > y.tally()) {
             return x;
         }
         return y;

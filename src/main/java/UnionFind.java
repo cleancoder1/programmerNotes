@@ -19,11 +19,15 @@ public class UnionFind {
         int rootOfp = root(p);
         int rootOfq = root(q);
 
+        if (rootOfp == rootOfq) {
+            return; // they are already in the same connected component
+        }
+
         id[rootOfp] = rootOfq;
         size--;
     }
 
-    int count(){
+    int count() {
         return size;
     }
 
@@ -35,14 +39,10 @@ public class UnionFind {
 
     int root(int p) {
         //chase the pointer
-
-        while (id[p] != p) {
-
+        while (p != id[p]) {
             p = id[p];
         }
         return p;
-        //throw new IllegalArgumentException("never happens");
-
     }
 
 
