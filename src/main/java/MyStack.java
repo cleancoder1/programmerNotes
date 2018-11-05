@@ -25,7 +25,7 @@ public class MyStack<E> implements Iterable<E> {
 
     public E pop() {
 
-        E element = elements[--n]; //pre decrement n
+        E element = elements[--n]; //pre decrement size
         elements[n] = null; // this is still confusing to me visualize , avoids loitering
 
         if (n > 0 && n == elements.length / 4) {
