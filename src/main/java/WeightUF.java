@@ -33,10 +33,10 @@ public class WeightUF {
         if (size[rootOfp] < size[rootOfq]) {
             //p is smaller tree, make it to attach to larger tree
             parent[rootOfp] = rootOfq;
-            size[q] = size[p] + size[q];
+            size[rootOfq] = size[rootOfp] + size[rootOfq];
         } else {
             parent[rootOfq] = rootOfp;
-            size[p] = size[p] + size[q];
+            size[rootOfp] = size[rootOfp] + size[rootOfq];
         }
 
         count--;
@@ -71,7 +71,7 @@ public class WeightUF {
 
 
         int N = StdIn.readInt();
-        UnionFind uf = new UnionFind(N);
+        WeightUF uf = new WeightUF(N);
         while (!StdIn.isEmpty()) {
             int p = StdIn.readInt();
             int q = StdIn.readInt();

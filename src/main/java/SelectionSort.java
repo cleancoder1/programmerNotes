@@ -1,3 +1,5 @@
+import elementarySorts.Sort;
+
 public class SelectionSort extends Sort {
 
 

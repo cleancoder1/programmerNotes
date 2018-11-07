@@ -1,3 +1,5 @@
+import elementarySorts.Sort;
+
 public class QuickSort extends Sort {
 
 

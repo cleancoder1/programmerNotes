@@ -1,3 +1,5 @@
+import elementarySorts.Sort;
+
 /*Divide and Conquer approach*/
 public class MergeSort extends Sort {
     private Comparable[] aux;
