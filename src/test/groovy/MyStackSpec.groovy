@@ -1,4 +1,5 @@
 import spock.lang.Specification
+import stacksQueuesBag.MyStack
 
 class MyStackSpec extends Specification {
     def "user should be able to create a generic stack and push elements to it"() {

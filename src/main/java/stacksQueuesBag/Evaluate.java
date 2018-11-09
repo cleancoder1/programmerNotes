@@ -1,6 +1,13 @@
+package stacksQueuesBag;
+
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
+
+/*
+Djiktras operation evalution ,using two stacks , value or operand stack and operator stack
+Ignore left parenthesis
+ */
 
 public class Evaluate {
     public static void main(String[] args) {
