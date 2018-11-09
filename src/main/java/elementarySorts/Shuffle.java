@@ -1,5 +1,6 @@
 package elementarySorts;
 
+import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 /*
@@ -24,6 +25,26 @@ public class Shuffle {
         input[b] = temp;
     }
 
+    void show(Comparable[] a) { // Print the array, on a single line.
+        for (int i = 0; i < a.length; i++)
+            StdOut.print(a[i] + " ");
+        StdOut.println();
+    }
+
+
+    public static void main(String[] args) {
+        //TODO run the simulation for million experiments and see if it is uniformly shuffled
+        Shuffle shuffle = new Shuffle();
+        Integer[] a = new Integer[5];
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+        a[3] = 4;
+        a[4] = 5;
+        shuffle.shuffle(a);
+        shuffle.show(a);
+
+    }
 
 
 }
