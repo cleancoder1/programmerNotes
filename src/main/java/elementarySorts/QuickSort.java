@@ -1,9 +1,9 @@
 package elementarySorts;
 
 /*
-One of the top 10 alogithms of 20 th century
-Inplace algorithm , with fastest perfomrance, time complexity is  0 nlogn . Used widely .
-complemantary to merge sort, both rely on recursion to  ,merge tries to sort two halves and merges them
+One of the top 10 Algorithms of 20 th century
+Inplace algorithm , with fastest performance, time complexity is  0 nlogn . Used widely .
+complementary to merge sort, both rely on divide and conquer approach  ,merge tries to sort two halves and merges them
  */
 
 public class QuickSort extends Sort {
@@ -28,39 +28,49 @@ public class QuickSort extends Sort {
 
         //shuffle and take first element as partition
 
-        sort(a, 0, a.length-1);
+        sort(a, 0, a.length - 1);
 
 
     }
 
     private void sort(Comparable[] a, int lo, int hi) {
 
-        int j = partition(a,lo,hi);
-        sort(a,lo,j-1);
-        sort(a,j,hi);
+        if (hi <= lo) { //single element nothing to sort
+            return;
+        }
+        int j = partition(a, lo, hi);
+        sort(a, lo, j - 1);
+        sort(a, j + 1, hi);
 
 
     }
 
+    // 52341  , 5  2341
+    //1 2345
     private int partition(Comparable[] a, int lo, int hi) {
-        Comparable  partitionElement = a[lo];
-        int i= lo+1;
-        int j= hi;
+        Comparable partitionElement = a[lo];
+        int i = lo;
+        int j = hi + 1;
 
 
-        while(i<j){ //you need to do until the pointers cross
-            while(less(partitionElement,a[i])){
-                i++;
-            }
-            while(less(a[j],partitionElement) ){
-                if(j <= lo+1){
+        while (true) {
+            //scan right,scan left check for scan complete and exchange.
+            while (less(a[++i], partitionElement)) {
+                if (i == hi) {
                     break;
                 }
-                j--;
             }
-            exchange(a,i,j);
+            while (less(partitionElement, a[--j])) {
+                if (j == lo) {
+                    break;
+                }
+            }
+            if (i >= j) {
+                break;
+            }
+            exchange(a, i, j);
         }
-        exchange(a,lo,j);
+        exchange(a, lo, j);
         return j;
     }
 }
