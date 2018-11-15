@@ -1,3 +1,4 @@
+import elementarySorts.MergeSort
 import spock.lang.Specification
 
 class MergeSortSpec extends Specification {

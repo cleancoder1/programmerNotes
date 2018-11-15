@@ -1,3 +1,4 @@
+import elementarySorts.QuickSort
 import spock.lang.Specification
 
 class QuickSortSpec extends Specification {
