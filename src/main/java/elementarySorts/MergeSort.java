@@ -39,23 +39,17 @@ public class MergeSort extends Sort {
         int i = lo;
         int j = mid + 1;
         for (int k = lo; k <= hi; k++) {
-
             /* left array is exhausted , copy all the right array elements */
             if (i > mid) {
-                a[k] = aux[j];
-                j++;
+                a[k] = aux[j++];
             }
-
             /* right array is exhausted, copy all the left array elements */
             else if (j > hi) {
-                a[k] = aux[i];
-                i++;
+                a[k] = aux[i++];
             } else if (less(aux[i], aux[j])) {
-                a[k] = aux[i];
-                i++;
+                a[k] = aux[i++];
             } else {
-                a[k] = aux[j];
-                j++;
+                a[k] = aux[j++];
             }
 
         }
