@@ -1,4 +1,4 @@
-package elementarySorts;
+package sorting;
 
 /*
 One of the top 10 Algorithms of 20 th century

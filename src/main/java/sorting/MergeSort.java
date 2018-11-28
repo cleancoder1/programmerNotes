@@ -1,4 +1,4 @@
-package elementarySorts;
+package sorting;
 
 /*
 A divide and conquer approach,

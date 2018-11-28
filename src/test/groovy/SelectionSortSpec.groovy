@@ -1,5 +1,5 @@
-import elementarySorts.InsertionSort
-import elementarySorts.SelectionSort
+import sorting.InsertionSort
+import sorting.SelectionSort
 import spock.lang.Specification
 
 class SelectionSortSpec extends Specification {

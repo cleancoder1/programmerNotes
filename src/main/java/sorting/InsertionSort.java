@@ -1,4 +1,4 @@
-package elementarySorts;
+package sorting;
 
 /*
  n^2/4 compares and exchanges on typical

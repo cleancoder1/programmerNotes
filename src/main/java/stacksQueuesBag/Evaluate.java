@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 /*
-Djiktras operation evalution ,using two stacks , value or operand stack and operator stack
+Djiktras operation Evaluation ,using two stacks , value or operand stack and operator stack
 Ignore left parenthesis
  */
 
