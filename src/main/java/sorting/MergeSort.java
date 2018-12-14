@@ -10,7 +10,7 @@ public class MergeSort extends Sort {
 
     private Comparable[] aux;
 
-    @Override
+//    @Override
     public void sort(Comparable[] a) {
         aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);

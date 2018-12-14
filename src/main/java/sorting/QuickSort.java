@@ -23,7 +23,7 @@ public class QuickSort extends Sort {
     }
 
 
-    @Override
+    //    @Override
     public void sort(Comparable[] a) {
 
         //shuffle and take first element as partition

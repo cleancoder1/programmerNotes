@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public abstract class Sort {
 
-    public abstract void sort(Comparable a[]);
+//    public abstract void sort(Comparable a[]);
 
 
     protected void exchange(Comparable input[], int a, int b) {
