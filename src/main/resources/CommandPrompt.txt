@@ -1,0 +1,9 @@
+Running from command prompt of java program with redirection
+
+1) Go to classes level
+2) Use java with classpath option add the jar and current directory and use the fully qualified class name
+3) Use redirection and mention the file name ( if your java program needs to read input from keyboard)
+
+Example
+C:\development\programmerNotes\out\production\classes>java -cp "C:\development\programmerNotes\src\algs4.jar;." searching.BinarySearchTree <../resources/tinyST
+.txt
