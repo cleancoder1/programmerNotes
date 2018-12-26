@@ -49,7 +49,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     /* if it is there update value or else create a new node
-     * We will do recursively */
+     * Using Tricky Recursion */
     private void put(Key key, Value value) {
         root = put(root, key, value);
 
@@ -58,22 +58,16 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     private Node put(Node x, Key key, Value value) {
 
         if (x == null) {
-            System.out.println("created a new node" + key + " value " + value);
             return new Node(key, value);
         }
         int cmp = key.compareTo(x.key);
         if (cmp == 0) {
-            System.out.println("Tree is updated with new value for key " + key);
-
             x.value = value;
         } else if (cmp < 0) {
-            System.out.println("Left sub tree needs to be  updated" + key);
             x.left = put(x.left, key, value);
         } else if (cmp > 0) {
-            System.out.println("Right sub tree needs to be  updated" + key);
             x.right = put(x.right, key, value);
         }
-        System.out.println("tree is  updated" + key);
         return x; // not sure if this is dead code
 
     }
